@@ -1,5 +1,5 @@
 package stringmatchingclasses;
 
-public class BoyerMooresAlgorithm {
+public class BoyerMooresAlgorithm extends MatchingAlgorithms {
 
 }
