@@ -1,9 +1,11 @@
 package str_matching_classes;
 
+import java.util.Scanner;
+
 public class BoyerMooresAlgorithm extends MatchingAlgorithms {
 
 	@Override
-	public void search() {
+	public void search(Scanner scanner) {
 		// TODO Auto-generated method stub
 		
 	}
