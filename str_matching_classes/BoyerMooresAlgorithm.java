@@ -12,8 +12,9 @@ public class BoyerMooresAlgorithm extends MatchingAlgorithms {
 	}
 
 	// d = max(d1,d2) d2-> goodTable Result
-	public void search1(String text) {
-		int[] goodSuffixTable = goodTable(this.keyPattern);
+	@Override
+	protected void search(String text) {
+		int[] goodSuffixTable = goodTable(keyPattern);
 
 		int index = keyLength - 1;
 		int textLength = text.length(); // optimization
@@ -22,7 +23,7 @@ public class BoyerMooresAlgorithm extends MatchingAlgorithms {
 			int k = 0;
 			for (int i = 0; i < keyLength; i++) {
 				this.noOfComparisons++;
-				if (text.charAt(index) == this.keyPattern.charAt(keyIndex)){
+				if (text.charAt(index) == keyPattern.charAt(keyIndex)){
 					k++;
 					index--;
 					keyIndex--;
