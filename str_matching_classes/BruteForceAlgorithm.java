@@ -9,8 +9,34 @@ public class BruteForceAlgorithm extends MatchingAlgorithms{
 	public BruteForceAlgorithm(PrintWriter pw) {
 		pw = this.pw;
 	}
+	
 	@Override
-	public void search(Scanner scanner) {
+	public void search(String text) {
+		long start = System.nanoTime();
+		int j = 0; // text index, i will have shorter span
+		int i;
+		int matchLength = 0;
+		do {
+			for(i = 0, matchLength = 0; i < keyLength;) {
+				if(keyPattern.charAt(i) == text.charAt(j)) {
+					noOfComparisons++;
+					matchLength++;
+					i++; j++;
+					if(matchLength == keyLength) {
+						startingIndices[instanceCount++] = j - keyLength;
+						j = j - keyLength + 1; // for overlap cases
+						break; 
+					}
+				}
+				else {
+					noOfComparisons++; // mismatch is still counted
+					j = j - i + 1; // to shift window by 1 only
+					break;
+				}
+			}
+		} while(j <= textLength - keyLength);
 		
+		long end = System.nanoTime();
+		timeElapsed = end - start;
 	}
 }
