@@ -21,31 +21,29 @@ abstract class MatchingAlgorithms {
 		MatchingAlgorithms horspool = new HorspoolAlgorithm(new PrintWriter("bruteOutput.html"));
 		MatchingAlgorithms algosArray[] = {brute, boyer, horspool};
 		
-		for(MatchingAlgorithms a : algosArray){
-			          Scanner inputScanner = new Scanner(inputFile);
-	            a.search(inputScanner);
-	            highlightHtml(a, inputFile); 
+		Scanner inputScanner = new Scanner(inputFile);
+		StringBuilder sb = new StringBuilder();
+		while (inputScanner.hasNextLine()) {
+			sb.append(inputScanner.nextLine());
+			sb.append("\n"); // TODO check if \r\n is a requirement 
+			for(MatchingAlgorithms a : algosArray){
+	            a.search(sb.toString());
+	            highlightHtml(a, inputFile, sb); 
 	            inputScanner.close();
+			}
 		}
 	}
 	// needs key length and a for loop that goes from 0 to instance count
 	// loop this backward for indices' not to move
-	private static void highlightHtml(MatchingAlgorithms algo, File inputFile){
+	private static void highlightHtml(MatchingAlgorithms algo, File inputFile, StringBuilder sb){
 		try(PrintWriter pw = new PrintWriter(inputFile);) {
 			int[] startingIndices = algo.startingIndices;
 			String markStart = "<mark>";
 			String markEnd = "</mark>";
-			StringBuilder sb = new StringBuilder();
-			Scanner scanner = new Scanner(inputFile);
-			while (scanner.hasNextLine()) {
-		        sb.append(scanner.nextLine());
-		        sb.append("\n"); // TODO check if \r\n is a requirement 
-		    }
 			for(int i = algo.instanceCount - 1; i >= 0; i--) { // as long as instanceCount isnt > 1024
 				sb.insert(startingIndices[i] + keyLength, markEnd);
 				sb.insert(startingIndices[i], markStart);
 			}
-			scanner.close();
 			algo.produceHtmlOutput(sb);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -56,9 +54,7 @@ abstract class MatchingAlgorithms {
 		this.pw.write(sb.toString());
 	}
 	
-	protected void search(Scanner scanner){
-
-	}; // this needs to be overridden by the sub classes
+	abstract protected void search(String text); // this needs to be overridden by the sub classes
 	// while searching it will adjust its own fields appropriately
 	// could also fill the startingIndices array
 }
