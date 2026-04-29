@@ -12,7 +12,7 @@ abstract class MatchingAlgorithms {
 	protected int startingIndices[] = new int[1024];
 	protected long timeElapsed;
 	protected static int keyLength;
- protected String keyPattern;
+ 	protected String keyPattern;
 	
 	public static void main(String[] args) throws FileNotFoundException{
 		File inputFile = new File("input.html");
@@ -56,7 +56,9 @@ abstract class MatchingAlgorithms {
 		this.pw.write(sb.toString());
 	}
 	
-	protected abstract void search(Scanner scanner); // this needs to be overridden by the sub classes
+	protected void search(Scanner scanner){
+
+	}; // this needs to be overridden by the sub classes
 	// while searching it will adjust its own fields appropriately
 	// could also fill the startingIndices array
 }

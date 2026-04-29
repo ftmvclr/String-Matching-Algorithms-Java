@@ -2,7 +2,7 @@ package str_matching_classes;
 
 import java.io.PrintWriter;
 import java.util.Arrays;
-import java.util.Scanner;
+
 
 public class BoyerMooresAlgorithm extends MatchingAlgorithms {
 	PrintWriter pw;
@@ -10,9 +10,37 @@ public class BoyerMooresAlgorithm extends MatchingAlgorithms {
 	public BoyerMooresAlgorithm(PrintWriter pw) {
 		pw = this.pw;
 	}
-	@Override
-	public void search(Scanner scanner) {
-		
+
+	// d = max(d1,d2) d2-> goodTable Result
+	public void search1(String text) {
+		int[] goodSuffixTable = goodTable(this.keyPattern);
+
+		int index = keyLength - 1;
+		int textLength = text.length(); // optimization
+		while (index < textLength) {
+			int keyIndex = keyLength - 1;
+			int k = 0;
+			for (int i = 0; i < keyLength; i++) {
+				this.noOfComparisons++;
+				if (text.charAt(index) == this.keyPattern.charAt(keyIndex)){
+					k++;
+					index--;
+					keyIndex--;
+					if(k == keyLength){ // key is found
+						this.startingIndices[this.instanceCount++] = index + 1;
+						index += (k + 1);
+						break;
+					}
+				} else {
+					// TO-D0
+					int d1 = badTable();
+					int d2 = k > 0 ? goodSuffixTable[k - 1] : 0;
+					int shift_value = d1 >= d2 ? d1 : d2;
+					index += shift_value + k;
+					break;
+				}
+			}
+		}
 	}
 
 	public int[] goodTable(String key) {
@@ -21,6 +49,7 @@ public class BoyerMooresAlgorithm extends MatchingAlgorithms {
 		String subString;
 		int[] goodTable = new int[keyLength - 1];
 		Arrays.fill(goodTable, keyLength);
+
 		for (int i = 1; i < keyLength; i++) {
 			subString = key.substring(keyLength - i, keyLength);
 			previousLetter = key.charAt(keyLength - i -1);
@@ -55,5 +84,4 @@ public class BoyerMooresAlgorithm extends MatchingAlgorithms {
 		}
 		return goodTable;
 	}
-
 }
