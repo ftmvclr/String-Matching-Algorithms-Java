@@ -12,6 +12,7 @@ abstract class MatchingAlgorithms {
 	protected int startingIndices[] = new int[1024];
 	protected long timeElapsed;
 	protected static int keyLength;
+ protected String keyPattern;
 	
 	public static void main(String[] args) throws FileNotFoundException{
 		File inputFile = new File("input.html");
@@ -21,7 +22,7 @@ abstract class MatchingAlgorithms {
 		MatchingAlgorithms algosArray[] = {brute, boyer, horspool};
 		
 		for(MatchingAlgorithms a : algosArray){
-			Scanner inputScanner = new Scanner(inputFile);
+			          Scanner inputScanner = new Scanner(inputFile);
 	            a.search(inputScanner);
 	            highlightHtml(a, inputFile); 
 	            inputScanner.close();
