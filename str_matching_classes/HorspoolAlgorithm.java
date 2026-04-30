@@ -3,21 +3,21 @@ package str_matching_classes;
 import java.io.PrintWriter;
 
 public class HorspoolAlgorithm extends MatchingAlgorithms {
-
+	static int[] badSymbolTable;
     public HorspoolAlgorithm(PrintWriter pw) {
         this.pw = pw;
     }
 
     public static int[] badTable(String pattern) {
-        int[] table = new int[256];
+        badSymbolTable = new int[256];
         int p=pattern.length();
         for(int i = 0; i < 256; i++) {
-            table[i]=p;
+            badSymbolTable[i]=p;
         }
         for(int i=0; i<p-1; i++) {
-            table[pattern.charAt(i)] = p-1-i;
+            badSymbolTable[pattern.charAt(i)] = p-1-i;
         }
-        return table;
+        return badSymbolTable;
     }
 
     @Override

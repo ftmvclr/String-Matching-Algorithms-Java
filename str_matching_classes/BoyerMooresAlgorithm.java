@@ -6,6 +6,8 @@ import java.util.Arrays;
 
 public class BoyerMooresAlgorithm extends MatchingAlgorithms {
 	PrintWriter pw;
+	int[] goodSuffixTable;
+	int[] badSymbolTable;
 	
 	public BoyerMooresAlgorithm(PrintWriter pw) {
 		pw = this.pw;
@@ -15,8 +17,8 @@ public class BoyerMooresAlgorithm extends MatchingAlgorithms {
 	// d1 = max(t1(c) - k, 1)
 	@Override
 	protected void search(String text) {
-		int[] goodSuffixTable = goodTable(keyPattern);
-		int[] badSymbolTable = HorspoolAlgorithm.badTable(keyPattern);
+		goodSuffixTable = goodTable(keyPattern);
+		badSymbolTable = HorspoolAlgorithm.badTable(keyPattern);
 
 		int index = keyLength - 1;
 		int textLength = text.length(); // optimization

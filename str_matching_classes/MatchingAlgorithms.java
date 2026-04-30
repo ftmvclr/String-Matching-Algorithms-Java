@@ -34,35 +34,34 @@ abstract class MatchingAlgorithms {
         keyPattern = key.toString();
         keyLength = key.length();
         // search
-		for(MatchingAlgorithms a : algosArray){
-            a.search(text.toString());
-            if(a instanceof HorspoolAlgorithm) {
+		for(MatchingAlgorithms algo : algosArray){
+            algo.search(text.toString());
+            if(algo instanceof HorspoolAlgorithm || 
+            	algo instanceof BoyerMooresAlgorithm) {
 //            	printBadTable();
             }
-            if(a instanceof BoyerMooresAlgorithm) {
-//            	printGoodSuffixTable();
+            if(algo instanceof BoyerMooresAlgorithm) {
+            	printGoodSuffixTable(((BoyerMooresAlgorithm)algo).goodSuffixTable);
             }
-            	
-            highlightHtml(a, inputFile, text); 
-		}
-	}
-	
-	private static void highlightHtml(MatchingAlgorithms algo, File inputFile, StringBuilder sb){
-		try(PrintWriter pw = new PrintWriter(inputFile);) {
-			ArrayList<Integer> startingIndices = algo.startingIndices;
-			String markStart = "<mark>";
-			String markEnd = "</mark>";
-			for(int i = startingIndices.size() - 1; i >= 0; i--) {
-				sb.insert(startingIndices.get(i) + keyLength, markEnd);
-				sb.insert(startingIndices.get(i), markStart);
-			}
-			algo.produceHtmlOutput(sb);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+            StringBuilder copy = new StringBuilder(text.toString()); 
+            highlightHtml(algo, copy);
 		}
 	}
 
-/*	public static void printGoodSuffixTable(int[] goodTable) {
+	private static void highlightHtml(MatchingAlgorithms algo, StringBuilder sb){
+		ArrayList<Integer> startingIndices = algo.startingIndices;
+		String markStart = "<mark>";
+		String markEnd = "</mark>";
+
+		for(int i = startingIndices.size() - 1; i >= 0; i--) {
+			sb.insert(startingIndices.get(i) + keyLength, markEnd);
+			sb.insert(startingIndices.get(i), markStart);
+		}
+		algo.produceHtmlOutput(sb);
+	}
+
+
+	public static void printGoodSuffixTable(int[] goodTable) {
 	    System.out.println("----- Good Suffix Table -----");
 	    System.out.println("Length (k) | Matched Suffix | Shift");
 	    System.out.println("-------------------------------");
@@ -74,9 +73,10 @@ abstract class MatchingAlgorithms {
 	    }
 	    System.out.println("-------------------------------");
 	}
-*/	
+	
 	protected void produceHtmlOutput(StringBuilder sb) {
 		this.pw.write(sb.toString());
+		this.pw.close();
 	}
 	
 	private static StringBuilder stringBuilderBuilder(Scanner inputScanner) {
