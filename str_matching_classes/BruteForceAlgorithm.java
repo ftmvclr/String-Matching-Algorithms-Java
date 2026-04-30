@@ -7,7 +7,7 @@ public class BruteForceAlgorithm extends MatchingAlgorithms{
 	PrintWriter pw;
 	
 	public BruteForceAlgorithm(PrintWriter pw) {
-		pw = this.pw;
+		this.pw = pw;
 	}
 	
 	@Override

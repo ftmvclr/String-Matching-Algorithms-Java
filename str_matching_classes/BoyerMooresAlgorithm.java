@@ -10,7 +10,7 @@ public class BoyerMooresAlgorithm extends MatchingAlgorithms {
 	int[] badSymbolTable;
 	
 	public BoyerMooresAlgorithm(PrintWriter pw) {
-		pw = this.pw;
+		this.pw = pw;
 	}
 
 	// d = max(d1,d2) d2-> goodTable Result

@@ -1,10 +1,12 @@
 package str_matching_classes;
 
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 abstract class MatchingAlgorithms {
 	PrintWriter pw;
@@ -16,23 +18,18 @@ abstract class MatchingAlgorithms {
  	protected static String keyPattern;
  	protected static long textLength;
 	
-	public static void main(String[] args) throws FileNotFoundException{
-		File inputFile = new File("input.html");
-		File patternFile = new File("key.txt");
+	public static void main(String[] args) throws IOException{
 		MatchingAlgorithms brute = new BruteForceAlgorithm(new PrintWriter("bruteOutput.html"));
 		MatchingAlgorithms boyer = new BoyerMooresAlgorithm(new PrintWriter("boyerOutput.html"));
 		MatchingAlgorithms horspool = new HorspoolAlgorithm(new PrintWriter("horspoolOutput.html"));
 		MatchingAlgorithms algosArray[] = {brute, boyer, horspool};
 		
-		Scanner inputScanner = new Scanner(inputFile);
-		Scanner patternScanner = new Scanner(patternFile);
 		// text
-		StringBuilder text = stringBuilderBuilder(inputScanner);
-		textLength = text.toString().length();
+		String text = Files.readString(Path.of("input.html"));		
+		textLength = text.length();
         // key
-        StringBuilder key = stringBuilderBuilder(patternScanner);
-        keyPattern = key.toString();
-        keyLength = key.length();
+		keyPattern = Files.readString(Path.of("key.txt"));
+        keyLength = keyPattern.length();
         // search
 		for(MatchingAlgorithms algo : algosArray){
             algo.search(text.toString());
@@ -79,15 +76,6 @@ abstract class MatchingAlgorithms {
 		this.pw.close();
 	}
 	
-	private static StringBuilder stringBuilderBuilder(Scanner inputScanner) {
-		StringBuilder sb = new StringBuilder();
-		while (inputScanner.hasNextLine()) {
-			sb.append(inputScanner.nextLine());
-			sb.append("\n"); // TODO check if \r\n is a requirement 
-		}
-		inputScanner.close();
-		return sb;
-	}
 	/*filling in the required fields while searching for instances*/
 	abstract protected void search(String text);
 }
