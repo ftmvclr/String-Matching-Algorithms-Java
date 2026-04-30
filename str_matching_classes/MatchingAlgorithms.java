@@ -1,10 +1,10 @@
 package str_matching_classes;
 
-import java.io.File;
+// import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Scanner;
+// import java.util.Scanner;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -57,7 +57,6 @@ abstract class MatchingAlgorithms {
 		algo.produceHtmlOutput(sb);
 	}
 
-
 	public static void printGoodSuffixTable(int[] goodTable) {
 	    System.out.println("----- Good Suffix Table -----");
 	    System.out.println("Length (k) | Matched Suffix | Shift");
@@ -69,6 +68,24 @@ abstract class MatchingAlgorithms {
 	        System.out.printf("%10d | %-14s | %5d\n", suffixLength, "\"" + suffix + "\"", goodTable[i]);
 	    }
 	    System.out.println("-------------------------------");
+	}
+	
+	/*TODO 32-126 seems verbose, try to find a way to
+	 * print the chars that exist within the key +
+	 * 1 more entry with the whole entry*/
+	public static void printBadSymbolTable(int[] badTable) {
+	    System.out.println("----- Bad Symbol Table -----");
+	    System.out.println("Character | Shift");
+	    System.out.println("---------------------------");
+
+	    for (int i = 0; i < badTable.length; i++) {
+	        if (i >= 32 && i <= 126) {
+	            if (badTable[i] != keyLength || keyPattern.indexOf((char) i) != -1) {
+	                System.out.printf("    '%c'    |%5d\n", (char) i, badTable[i]);
+	            }
+	        }
+	    }
+	    System.out.println("---------------------------");
 	}
 	
 	protected void produceHtmlOutput(StringBuilder sb) {

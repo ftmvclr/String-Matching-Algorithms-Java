@@ -1,7 +1,7 @@
 package str_matching_classes;
 
 import java.io.PrintWriter;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class BruteForceAlgorithm extends MatchingAlgorithms{
 	PrintWriter pw;
