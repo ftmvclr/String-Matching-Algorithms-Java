@@ -12,9 +12,11 @@ public class BoyerMooresAlgorithm extends MatchingAlgorithms {
 	}
 
 	// d = max(d1,d2) d2-> goodTable Result
+	// d1 = max(t1(c) - k, 1)
 	@Override
 	protected void search(String text) {
 		int[] goodSuffixTable = goodTable(keyPattern);
+		int[] badSymbolTable = HorspoolAlgorithm.badTable(keyPattern);
 
 		int index = keyLength - 1;
 		int textLength = text.length(); // optimization
@@ -33,8 +35,7 @@ public class BoyerMooresAlgorithm extends MatchingAlgorithms {
 						break;
 					}
 				} else {
-					// TO-D0
-					int d1 = badTable();
+					int d1 = Math.max(badSymbolTable[text.charAt(index)] - k, 1);
 					int d2 = k > 0 ? goodSuffixTable[k - 1] : 0;
 					int shift_value = d1 >= d2 ? d1 : d2;
 					index += shift_value + k;
