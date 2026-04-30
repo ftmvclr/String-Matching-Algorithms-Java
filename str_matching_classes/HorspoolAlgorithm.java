@@ -8,11 +8,11 @@ public class HorspoolAlgorithm extends MatchingAlgorithms {
         this.pw = pw;
     }
 
-    private int[] badTable(String pattern) {
+    public static int[] badTable(String pattern) {
         int[] table = new int[256];
         int p=pattern.length();
         for(int i = 0; i < 256; i++) {
-            table[i] = p;
+            table[i]=p;
         }
         for(int i=0; i<p-1; i++) {
             table[pattern.charAt(i)] = p-1-i;
