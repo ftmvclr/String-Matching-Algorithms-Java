@@ -30,7 +30,8 @@ public class BoyerMooresAlgorithm extends MatchingAlgorithms {
 					index--;
 					keyIndex--;
 					if(k == keyLength){ // key is found
-						this.startingIndices[this.instanceCount++] = index + 1;
+						startingIndices.add(index + 1);
+						instanceCount++;
 						index += (k + 1);
 						break;
 					}

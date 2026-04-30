@@ -3,13 +3,14 @@ package str_matching_classes;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 abstract class MatchingAlgorithms {
 	PrintWriter pw;
 	protected int noOfComparisons;
 	protected int instanceCount;
-	protected int startingIndices[] = new int[1024]; // should we use array lists instead?
+	protected ArrayList<Integer> startingIndices = new ArrayList<>();
 	protected long timeElapsed;
 	protected static int keyLength;
  	protected static String keyPattern;
@@ -35,25 +36,45 @@ abstract class MatchingAlgorithms {
         // search
 		for(MatchingAlgorithms a : algosArray){
             a.search(text.toString());
+            if(a instanceof HorspoolAlgorithm) {
+//            	printBadTable();
+            }
+            if(a instanceof BoyerMooresAlgorithm) {
+//            	printGoodSuffixTable();
+            }
+            	
             highlightHtml(a, inputFile, text); 
 		}
 	}
 	
 	private static void highlightHtml(MatchingAlgorithms algo, File inputFile, StringBuilder sb){
 		try(PrintWriter pw = new PrintWriter(inputFile);) {
-			int[] startingIndices = algo.startingIndices;
+			ArrayList<Integer> startingIndices = algo.startingIndices;
 			String markStart = "<mark>";
 			String markEnd = "</mark>";
-			for(int i = algo.instanceCount - 1; i >= 0; i--) { // as long as instanceCount isn't > 1024
-				sb.insert(startingIndices[i] + keyLength, markEnd);
-				sb.insert(startingIndices[i], markStart);
+			for(int i = startingIndices.size() - 1; i >= 0; i--) {
+				sb.insert(startingIndices.get(i) + keyLength, markEnd);
+				sb.insert(startingIndices.get(i), markStart);
 			}
 			algo.produceHtmlOutput(sb);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
+/*	public static void printGoodSuffixTable(int[] goodTable) {
+	    System.out.println("----- Good Suffix Table -----");
+	    System.out.println("Length (k) | Matched Suffix | Shift");
+	    System.out.println("-------------------------------");
+
+	    for (int i = 0; i < goodTable.length; i++) {
+	        int suffixLength = i + 1;
+	        String suffix = keyPattern.substring(keyLength - suffixLength);
+	        System.out.printf("%10d | %-14s | %5d\n", suffixLength, "\"" + suffix + "\"", goodTable[i]);
+	    }
+	    System.out.println("-------------------------------");
+	}
+*/	
 	protected void produceHtmlOutput(StringBuilder sb) {
 		this.pw.write(sb.toString());
 	}

@@ -40,7 +40,7 @@ public class HorspoolAlgorithm extends MatchingAlgorithms {
                 k++; 
             }
                 if (k==m){
-                    startingIndices[instanceCount]=i-m+1;
+                    startingIndices.add(i-m+1);
                     instanceCount++;
                 }
             i+=table[text.charAt(i)];

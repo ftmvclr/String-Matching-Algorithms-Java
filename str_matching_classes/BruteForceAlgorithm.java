@@ -23,7 +23,8 @@ public class BruteForceAlgorithm extends MatchingAlgorithms{
 					matchLength++;
 					i++; j++;
 					if(matchLength == keyLength) {
-						startingIndices[instanceCount++] = j - keyLength;
+						startingIndices.add(j - keyLength);
+						instanceCount++;
 						j = j - keyLength + 1; // for overlap cases
 						break; 
 					}
