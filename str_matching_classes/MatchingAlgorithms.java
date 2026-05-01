@@ -34,9 +34,9 @@ abstract class MatchingAlgorithms {
 		for(MatchingAlgorithms algo : algosArray){
             algo.search(text.toString());
 			System.out.println("    " + algo.getClass().getSimpleName() + "    ");
-            System.out.println("Occurrences  : " + algo.instanceCount);
-            System.out.println("Comparisons  : " + algo.noOfComparisons);
-            System.out.println("Time(ms)    : " + algo.timeElapsed/1000000.0);
+            System.out.println("  Occurrences  : " + algo.instanceCount);
+            System.out.println("  Comparisons  : " + algo.noOfComparisons);
+            System.out.println("  Time(ms)     : " + algo.timeElapsed/1000000.0);
             System.out.println();
             if(algo instanceof HorspoolAlgorithm) {
 				printBadSymbolTable(HorspoolAlgorithm.badSymbolTable);
@@ -80,7 +80,7 @@ abstract class MatchingAlgorithms {
 	 * 1 more entry with the whole entry*/
 	public static void printBadSymbolTable(int[] badTable) {
 	    System.out.println("----- Bad Symbol Table -----");
-	    System.out.println("Character | Shift");
+	    System.out.println(" Character |  Shift");
 	    System.out.println("---------------------------");
 
 	    for (int i = 0; i < badTable.length; i++) {
@@ -94,8 +94,8 @@ abstract class MatchingAlgorithms {
 	}
 	
 	protected void produceHtmlOutput(StringBuilder sb) {
-		this.pw.write(sb.toString());
-		this.pw.close();
+		pw.write(sb.toString());
+		pw.close();
 	}
 	
 	/*filling in the required fields while searching for instances*/

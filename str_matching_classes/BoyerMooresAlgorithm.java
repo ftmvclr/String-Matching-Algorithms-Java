@@ -5,7 +5,6 @@ import java.util.Arrays;
 
 
 public class BoyerMooresAlgorithm extends MatchingAlgorithms {
-	PrintWriter pw;
 	int[] goodSuffixTable;
 	int[] badSymbolTable;
 	

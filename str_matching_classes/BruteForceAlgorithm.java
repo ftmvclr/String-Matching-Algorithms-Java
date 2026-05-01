@@ -4,7 +4,6 @@ import java.io.PrintWriter;
 //import java.util.Scanner;
 
 public class BruteForceAlgorithm extends MatchingAlgorithms{
-	PrintWriter pw;
 	
 	public BruteForceAlgorithm(PrintWriter pw) {
 		this.pw = pw;
