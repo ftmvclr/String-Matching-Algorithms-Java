@@ -33,9 +33,15 @@ abstract class MatchingAlgorithms {
         // search
 		for(MatchingAlgorithms algo : algosArray){
             algo.search(text.toString());
+			 System.out.println("    " + algo.getClass().getSimpleName() + "    ");
+             System.out.println("Occurrences  : " + algo.instanceCount);
+             System.out.println("Comparisons  : " + algo.noOfComparisons);
+             System.out.println("Time(ms)    : " + algo.timeElapsed/1000000.0);
+             System.out.println();
             if(algo instanceof HorspoolAlgorithm || 
             	algo instanceof BoyerMooresAlgorithm) {
-//            	printBadTable();
+				printBadSymbolTable(((HorspoolAlgorithm)algo).badSymbolTable);
+                //printBadSymbolTable();
             }
             if(algo instanceof BoyerMooresAlgorithm) {
             	printGoodSuffixTable(((BoyerMooresAlgorithm)algo).goodSuffixTable);
