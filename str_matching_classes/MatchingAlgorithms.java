@@ -33,18 +33,17 @@ abstract class MatchingAlgorithms {
         // search
 		for(MatchingAlgorithms algo : algosArray){
             algo.search(text.toString());
-			 System.out.println("    " + algo.getClass().getSimpleName() + "    ");
-             System.out.println("Occurrences  : " + algo.instanceCount);
-             System.out.println("Comparisons  : " + algo.noOfComparisons);
-             System.out.println("Time(ms)    : " + algo.timeElapsed/1000000.0);
-             System.out.println();
-            if(algo instanceof HorspoolAlgorithm || 
-            	algo instanceof BoyerMooresAlgorithm) {
-				printBadSymbolTable(((HorspoolAlgorithm)algo).badSymbolTable);
-                //printBadSymbolTable();
+			System.out.println("    " + algo.getClass().getSimpleName() + "    ");
+            System.out.println("Occurrences  : " + algo.instanceCount);
+            System.out.println("Comparisons  : " + algo.noOfComparisons);
+            System.out.println("Time(ms)    : " + algo.timeElapsed/1000000.0);
+            System.out.println();
+            if(algo instanceof HorspoolAlgorithm) {
+				printBadSymbolTable(HorspoolAlgorithm.badSymbolTable);
             }
             if(algo instanceof BoyerMooresAlgorithm) {
             	printGoodSuffixTable(((BoyerMooresAlgorithm)algo).goodSuffixTable);
+				printBadSymbolTable(HorspoolAlgorithm.badSymbolTable);
             }
             StringBuilder copy = new StringBuilder(text.toString()); 
             highlightHtml(algo, copy);
