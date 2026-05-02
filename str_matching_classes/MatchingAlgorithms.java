@@ -1,5 +1,6 @@
 package str_matching_classes;
 
+import java.io.FileWriter;
 // import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -33,18 +34,18 @@ abstract class MatchingAlgorithms {
         // search
 		for(MatchingAlgorithms algo : algosArray){
             algo.search(text.toString());
-			System.out.println("    " + algo.getClass().getSimpleName() + "    ");
-            System.out.println("  Occurrences  : " + algo.instanceCount);
-            System.out.println("  Comparisons  : " + algo.noOfComparisons);
-            System.out.println("  Time(ms)     : " + algo.timeElapsed/1000000.0);
-            System.out.println();
+			
             if(algo instanceof HorspoolAlgorithm) {
-				printBadSymbolTable(HorspoolAlgorithm.badSymbolTable);
+            	printStatistics(algo, "horspoolReport.txt");
+				printBadSymbolTable(HorspoolAlgorithm.badSymbolTable, "horspoolReport.txt");
             }
-            if(algo instanceof BoyerMooresAlgorithm) {
-            	printGoodSuffixTable(((BoyerMooresAlgorithm)algo).goodSuffixTable);
-				printBadSymbolTable(HorspoolAlgorithm.badSymbolTable);
+            else if(algo instanceof BoyerMooresAlgorithm) {
+            	printStatistics(algo, "boyerReport.txt");
+            	printGoodSuffixTable(((BoyerMooresAlgorithm)algo).goodSuffixTable, "boyerReport.txt");
+				printBadSymbolTable(HorspoolAlgorithm.badSymbolTable, "boyerReport.txt");
             }
+            else
+            	printStatistics(algo, "bruteReport.txt");
             StringBuilder copy = new StringBuilder(text.toString()); 
             highlightHtml(algo, copy);
 		}
@@ -61,38 +62,50 @@ abstract class MatchingAlgorithms {
 		}
 		algo.produceHtmlOutput(sb);
 	}
+	public static void printGoodSuffixTable(int[] goodTable, String filename) {
+		// append? true
+	    try (PrintWriter writer = new PrintWriter(new FileWriter(filename, true))) {
+	        writer.println("----- Good Suffix Table -----");
+	        writer.println("Length (k) | Matched Suffix | Shift");
+	        writer.println("-------------------------------");
 
-	public static void printGoodSuffixTable(int[] goodTable) {
-	    System.out.println("----- Good Suffix Table -----");
-	    System.out.println("Length (k) | Matched Suffix | Shift");
-	    System.out.println("-------------------------------");
-
-	    for (int i = 0; i < goodTable.length; i++) {
-	        int suffixLength = i + 1;
-	        String suffix = keyPattern.substring(keyLength - suffixLength);
-	        System.out.printf("%10d | %-14s | %5d\n", suffixLength, "\"" + suffix + "\"", goodTable[i]);
-	    }
-	    System.out.println("-------------------------------");
+	        for (int i = 0; i < goodTable.length; i++) {
+	            int suffixLength = i + 1;
+	            String suffix = keyPattern.substring(keyLength - suffixLength);
+	            writer.printf("%10d | %-14s | %5d\n", suffixLength, "\"" + suffix + "\"", goodTable[i]);
+	        }
+	        writer.println("-------------------------------");
+	        
+	    } catch (IOException e) {}
 	}
 	
-	/*TODO 32-126 seems verbose, try to find a way to
-	 * print the chars that exist within the key +
-	 * 1 more entry with the whole entry*/
-	public static void printBadSymbolTable(int[] badTable) {
-	    System.out.println("----- Bad Symbol Table -----");
-	    System.out.println(" Character |  Shift");
-	    System.out.println("---------------------------");
+	public static void printBadSymbolTable(int[] badTable, String fileName) {
+	    try (PrintWriter writer = new PrintWriter(new FileWriter(fileName, true))) { // append? true
+	        writer.println("----- Bad Symbol Table -----");
+	        writer.println(" Character |  Shift");
+	        writer.println("---------------------------");
 
-	    for (int i = 0; i < badTable.length; i++) {
-	        if (i >= 32 && i <= 126) {
-	            if (badTable[i] != keyLength || keyPattern.indexOf((char) i) != -1) {
-	                System.out.printf("    '%c'    |%5d\n", (char) i, badTable[i]);
+	        for (int i = 0; i < badTable.length; i++) {
+	            if (i >= 32 && i <= 126) {
+	                if (badTable[i] != keyLength || keyPattern.indexOf((char) i) != -1) {
+	                    writer.printf("    '%c'    |%5d\n", (char) i, badTable[i]);
+	                }
 	            }
 	        }
-	    }
-	    System.out.println("---------------------------");
+	        writer.println("---------------------------");
+	        
+	    } catch (IOException e) {}
 	}
 	
+	public static void printStatistics(MatchingAlgorithms algo, String fileName) {
+		try (PrintWriter writer = new PrintWriter(new FileWriter(fileName, true))) { // append? true
+			writer.println("    " + algo.getClass().getSimpleName() + "    ");
+			writer.println("  Occurrences  : " + algo.instanceCount);
+			writer.println("  Comparisons  : " + algo.noOfComparisons);
+			writer.println("  Time(ms)     : " + algo.timeElapsed/1000000.0);
+			writer.println("---------------------------");
+		} catch (IOException e) {}
+	}
 	protected void produceHtmlOutput(StringBuilder sb) {
 		pw.write(sb.toString());
 		pw.close();
