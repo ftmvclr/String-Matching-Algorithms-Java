@@ -50,15 +50,23 @@ abstract class MatchingAlgorithms {
             highlightHtml(algo, copy);
 		}
 	}
-
+// TODO not sure if it handles edge cases
 	private static void highlightHtml(MatchingAlgorithms algo, StringBuilder sb){
 		ArrayList<Integer> startingIndices = algo.startingIndices;
 		String markStart = "<mark>";
 		String markEnd = "</mark>";
 
 		for(int i = startingIndices.size() - 1; i >= 0; i--) {
-			sb.insert(startingIndices.get(i) + keyLength, markEnd);
-			sb.insert(startingIndices.get(i), markStart);
+			if(startingIndices.get(i) - startingIndices.get(i - 1) < keyLength && i != 0) { // merge
+				sb.insert(startingIndices.get(i) + keyLength, markEnd);
+				sb.insert(startingIndices.get(i - 1), markStart);
+				i--;
+			}
+			else {
+				sb.insert(startingIndices.get(i) + keyLength, markEnd);
+				sb.insert(startingIndices.get(i), markStart);
+			}
+			
 		}
 		algo.produceHtmlOutput(sb);
 	}
@@ -80,16 +88,14 @@ abstract class MatchingAlgorithms {
 	}
 	
 	public static void printBadSymbolTable(int[] badTable, String fileName) {
-	    try (PrintWriter writer = new PrintWriter(new FileWriter(fileName, true))) { // append? true
-	        writer.println("----- Bad Symbol Table -----");
-	        writer.println(" Character |  Shift");
-	        writer.println("---------------------------");
-
-	        for (int i = 0; i < badTable.length; i++) {
-	            if (i >= 32 && i <= 126) {
-	                if (badTable[i] != keyLength || keyPattern.indexOf((char) i) != -1) {
-	                    writer.printf("    '%c'    |%5d\n", (char) i, badTable[i]);
-	                }
+		try (PrintWriter writer = new PrintWriter(new FileWriter(fileName, true))) { // append? true
+			writer.println("----- Bad Symbol Table -----");
+			writer.println(" Character |  Shift");
+			writer.println("---------------------------");
+			// traverse printables, print if the char is contained
+			for (int i = 32; i <= 126; i++) { 
+				if (badTable[i] != keyLength || keyPattern.indexOf((char) i) != -1) { 
+					writer.printf("    '%c'    |%5d\n", (char) i, badTable[i]);
 	            }
 	        }
 	        writer.println("---------------------------");
