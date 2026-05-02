@@ -1,5 +1,6 @@
 package str_matching_classes;
 
+import java.io.FileWriter;
 // import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -32,67 +33,88 @@ abstract class MatchingAlgorithms {
         keyLength = keyPattern.length();
         // search
 		for(MatchingAlgorithms algo : algosArray){
+			long start = System.nanoTime();
             algo.search(text.toString());
-			System.out.println("    " + algo.getClass().getSimpleName() + "    ");
-            System.out.println("  Occurrences  : " + algo.instanceCount);
-            System.out.println("  Comparisons  : " + algo.noOfComparisons);
-            System.out.println("  Time(ms)     : " + algo.timeElapsed/1000000.0);
-            System.out.println();
+            long end = System.nanoTime();
+            algo.timeElapsed = end - start;
+            
             if(algo instanceof HorspoolAlgorithm) {
-				printBadSymbolTable(HorspoolAlgorithm.badSymbolTable);
+            	printStatistics(algo, "horspoolReport.txt");
+				printBadSymbolTable(HorspoolAlgorithm.badSymbolTable, "horspoolReport.txt");
             }
-            if(algo instanceof BoyerMooresAlgorithm) {
-            	printGoodSuffixTable(((BoyerMooresAlgorithm)algo).goodSuffixTable);
-				printBadSymbolTable(HorspoolAlgorithm.badSymbolTable);
+            else if(algo instanceof BoyerMooresAlgorithm) {
+            	printStatistics(algo, "boyerReport.txt");
+            	printGoodSuffixTable(((BoyerMooresAlgorithm)algo).goodSuffixTable, "boyerReport.txt");
+				printBadSymbolTable(HorspoolAlgorithm.badSymbolTable, "boyerReport.txt");
             }
+            else
+            	printStatistics(algo, "bruteReport.txt");
             StringBuilder copy = new StringBuilder(text.toString()); 
             highlightHtml(algo, copy);
 		}
 	}
-
+// TODO not sure if it handles edge cases
 	private static void highlightHtml(MatchingAlgorithms algo, StringBuilder sb){
 		ArrayList<Integer> startingIndices = algo.startingIndices;
 		String markStart = "<mark>";
 		String markEnd = "</mark>";
 
 		for(int i = startingIndices.size() - 1; i >= 0; i--) {
-			sb.insert(startingIndices.get(i) + keyLength, markEnd);
-			sb.insert(startingIndices.get(i), markStart);
+			if(i != 0 && startingIndices.get(i) - startingIndices.get(i - 1) < keyLength) { // merge
+				sb.insert(startingIndices.get(i) + keyLength, markEnd);
+				sb.insert(startingIndices.get(i - 1), markStart);
+				i--;
+			}
+			else {
+				sb.insert(startingIndices.get(i) + keyLength, markEnd);
+				sb.insert(startingIndices.get(i), markStart);
+			}
+			
 		}
 		algo.produceHtmlOutput(sb);
 	}
+	public static void printGoodSuffixTable(int[] goodTable, String filename) {
+		// append? true
+	    try (PrintWriter writer = new PrintWriter(new FileWriter(filename, true))) {
+	        writer.println("----- Good Suffix Table -----");
+	        writer.println("Length (k) | Matched Suffix | Shift");
+	        writer.println("-------------------------------");
 
-	public static void printGoodSuffixTable(int[] goodTable) {
-	    System.out.println("----- Good Suffix Table -----");
-	    System.out.println("Length (k) | Matched Suffix | Shift");
-	    System.out.println("-------------------------------");
-
-	    for (int i = 0; i < goodTable.length; i++) {
-	        int suffixLength = i + 1;
-	        String suffix = keyPattern.substring(keyLength - suffixLength);
-	        System.out.printf("%10d | %-14s | %5d\n", suffixLength, "\"" + suffix + "\"", goodTable[i]);
-	    }
-	    System.out.println("-------------------------------");
+	        for (int i = 0; i < goodTable.length; i++) {
+	            int suffixLength = i + 1;
+	            String suffix = keyPattern.substring(keyLength - suffixLength);
+	            writer.printf("%10d | %-14s | %5d\n", suffixLength, "\"" + suffix + "\"", goodTable[i]);
+	        }
+	        writer.println("-------------------------------");
+	        
+	    } catch (IOException e) {}
 	}
 	
-	/*TODO 32-126 seems verbose, try to find a way to
-	 * print the chars that exist within the key +
-	 * 1 more entry with the whole entry*/
-	public static void printBadSymbolTable(int[] badTable) {
-	    System.out.println("----- Bad Symbol Table -----");
-	    System.out.println(" Character |  Shift");
-	    System.out.println("---------------------------");
-
-	    for (int i = 0; i < badTable.length; i++) {
-	        if (i >= 32 && i <= 126) {
-	            if (badTable[i] != keyLength || keyPattern.indexOf((char) i) != -1) {
-	                System.out.printf("    '%c'    |%5d\n", (char) i, badTable[i]);
+	public static void printBadSymbolTable(int[] badTable, String fileName) {
+		try (PrintWriter writer = new PrintWriter(new FileWriter(fileName, true))) { // append? true
+			writer.println("----- Bad Symbol Table -----");
+			writer.println(" Character |  Shift");
+			writer.println("---------------------------");
+			// traverse printables, print if the char is contained
+			for (int i = 32; i <= 126; i++) { 
+				if (badTable[i] != keyLength || keyPattern.indexOf((char) i) != -1) { 
+					writer.printf("    '%c'    |%5d\n", (char) i, badTable[i]);
 	            }
 	        }
-	    }
-	    System.out.println("---------------------------");
+	        writer.println("---------------------------");
+	        
+	    } catch (IOException e) {}
 	}
 	
+	public static void printStatistics(MatchingAlgorithms algo, String fileName) {
+		try (PrintWriter writer = new PrintWriter(new FileWriter(fileName, true))) { // append? true
+			writer.println("    " + algo.getClass().getSimpleName() + "    ");
+			writer.println("  Occurrences  : " + algo.instanceCount);
+			writer.println("  Comparisons  : " + algo.noOfComparisons);
+			writer.println("  Time(ms)     : " + algo.timeElapsed/1000000.0);
+			writer.println("---------------------------");
+		} catch (IOException e) {}
+	}
 	protected void produceHtmlOutput(StringBuilder sb) {
 		pw.write(sb.toString());
 		pw.close();
