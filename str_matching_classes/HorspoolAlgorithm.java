@@ -11,7 +11,7 @@ public class HorspoolAlgorithm extends MatchingAlgorithms {
     public static int[] badTable(String pattern) {
         badSymbolTable = new int[256];
         int p=pattern.length();
-        for(int i = 0; i < 256; i++) {
+        for(int i=0; i<256; i++) {
             badSymbolTable[i]=p;
         }
         for(int i=0; i<p-1; i++) {
