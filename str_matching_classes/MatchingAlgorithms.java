@@ -60,7 +60,7 @@ abstract class MatchingAlgorithms {
 		String markEnd = "</mark>";
 
 		for(int i = startingIndices.size() - 1; i >= 0; i--) {
-			if(startingIndices.get(i) - startingIndices.get(i - 1) < keyLength && i != 0) { // merge
+			if(i != 0 && startingIndices.get(i) - startingIndices.get(i - 1) < keyLength) { // merge
 				sb.insert(startingIndices.get(i) + keyLength, markEnd);
 				sb.insert(startingIndices.get(i - 1), markStart);
 				i--;
