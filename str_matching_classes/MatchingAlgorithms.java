@@ -26,7 +26,7 @@ abstract class MatchingAlgorithms {
 		MatchingAlgorithms algosArray[] = {brute, boyer, horspool};
 		
 		// text
-		String text = Files.readString(Path.of("input.html"));		
+		String text = Files.readString(Path.of("AksuBieber.html"));		
 		textLength = text.length();
         // key
 		keyPattern = Files.readString(Path.of("key.txt"));
@@ -87,7 +87,9 @@ abstract class MatchingAlgorithms {
 	        }
 	        writer.println("-------------------------------");
 	        
-	    } catch (IOException e) {}
+	    } catch (IOException e) {
+	    	System.err.println("exiting");
+	    }
 	}
 	
 	public static void printBadSymbolTable(int[] badTable, String fileName) {
@@ -103,7 +105,9 @@ abstract class MatchingAlgorithms {
 	        }
 	        writer.println("---------------------------");
 	        
-	    } catch (IOException e) {}
+	    } catch (IOException e) {
+	    	System.err.println("exiting");
+	    }
 	}
 	
 	public static void printStatistics(MatchingAlgorithms algo, String fileName) {
@@ -113,7 +117,9 @@ abstract class MatchingAlgorithms {
 			writer.println("  Comparisons  : " + algo.noOfComparisons);
 			writer.println("  Time(ms)     : " + algo.timeElapsed/1000000.0);
 			writer.println("---------------------------");
-		} catch (IOException e) {}
+		} catch (IOException e) {
+	    	System.err.println("exiting");
+		}
 	}
 	protected void produceHtmlOutput(StringBuilder sb) {
 		pw.write(sb.toString());
