@@ -7,7 +7,8 @@ import java.util.Arrays;
 public class BoyerMooresAlgorithm extends MatchingAlgorithms {
 	int[] goodSuffixTable;
 	int[] badSymbolTable;
-	
+	int fullMatchShift;
+
 	public BoyerMooresAlgorithm(PrintWriter pw) {
 		this.pw = pw;
 	}
@@ -19,25 +20,38 @@ public class BoyerMooresAlgorithm extends MatchingAlgorithms {
 		goodSuffixTable = goodTable(keyPattern);
 		badSymbolTable = HorspoolAlgorithm.badTable(keyPattern);
 
+		fullMatchShift = 1;
+		for (int len = keyLength - 1; len > 0; len--) {
+			if (keyPattern.substring(0, len).equals(keyPattern.substring(keyLength - len))) {
+				fullMatchShift = keyLength - len;
+				break;
+			}
+		}
+		// more optimization
+		char[] textChars = text.toCharArray();
+		char[] patternChars = keyPattern.toCharArray();
+
 		int index = keyLength - 1;
 		int textLength = text.length(); // optimization
 		while (index < textLength) {
 			int keyIndex = keyLength - 1;
 			int k = 0;
+
 			for (int i = 0; i < keyLength; i++) {
 				this.noOfComparisons++;
-				if (text.charAt(index) == keyPattern.charAt(keyIndex)){
+
+				if (textChars[index] == patternChars[keyIndex]){
 					k++;
 					index--;
 					keyIndex--;
 					if(k == keyLength){ // key is found
 						startingIndices.add(index + 1);
 						instanceCount++;
-						index += (k + 1);
+						index += (k + fullMatchShift);
 						break;
 					}
 				} else {
-					int d1 = Math.max(badSymbolTable[text.charAt(index)] - k, 1);
+					int d1 = Math.max(badSymbolTable[textChars[index]] - k, 1);
 					int d2 = k > 0 ? goodSuffixTable[k - 1] : 0;
 					int shift_value = d1 >= d2 ? d1 : d2;
 					index += shift_value + k;
@@ -81,7 +95,7 @@ public class BoyerMooresAlgorithm extends MatchingAlgorithms {
 				if(previousLetter != key.charAt(index - 1)) {
 					goodTable[i - 1] = keyLength - index - i;
 					break;
-				} else  {
+				} else {
 					fromIndex = index - 1;
 				}
 			}
