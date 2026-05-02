@@ -34,7 +34,7 @@ abstract class MatchingAlgorithms {
         // search
 		for(MatchingAlgorithms algo : algosArray){
 			long start = System.nanoTime();
-            algo.search(text.toString());
+            algo.search(text);
             long end = System.nanoTime();
             algo.timeElapsed = end - start;
             
@@ -45,30 +45,25 @@ abstract class MatchingAlgorithms {
             else if(algo instanceof BoyerMooresAlgorithm) {
             	printStatistics(algo, "boyerReport.txt");
             	printGoodSuffixTable(((BoyerMooresAlgorithm)algo).goodSuffixTable, "boyerReport.txt");
-				printBadSymbolTable(HorspoolAlgorithm.badSymbolTable, "boyerReport.txt");
+            	printBadSymbolTable(HorspoolAlgorithm.badSymbolTable, "boyerReport.txt");
             }
             else
             	printStatistics(algo, "bruteReport.txt");
-            StringBuilder copy = new StringBuilder(text.toString()); 
+            StringBuilder copy = new StringBuilder(text); 
             highlightHtml(algo, copy);
 		}
 	}
-// TODO not sure if it handles edge cases
 	private static void highlightHtml(MatchingAlgorithms algo, StringBuilder sb){
 		ArrayList<Integer> startingIndices = algo.startingIndices;
 		String markStart = "<mark>";
 		String markEnd = "</mark>";
 
 		for(int i = startingIndices.size() - 1; i >= 0; i--) {
-			if(i != 0 && startingIndices.get(i) - startingIndices.get(i - 1) < keyLength) { // merge
-				sb.insert(startingIndices.get(i) + keyLength, markEnd);
-				sb.insert(startingIndices.get(i - 1), markStart);
-				i--;
+			sb.insert(startingIndices.get(i) + keyLength, markEnd);
+			for(;i != 0 && startingIndices.get(i) - startingIndices.get(i - 1) < keyLength;) { 
+				i--; // loop until the beginning of the overlap
 			}
-			else {
-				sb.insert(startingIndices.get(i) + keyLength, markEnd);
-				sb.insert(startingIndices.get(i), markStart);
-			}
+			sb.insert(startingIndices.get(i), markStart);
 			
 		}
 		algo.produceHtmlOutput(sb);
@@ -103,6 +98,7 @@ abstract class MatchingAlgorithms {
 					writer.printf("    '%c'    |%5d\n", (char) i, badTable[i]);
 	            }
 	        }
+			writer.printf("    '%c'    |%5d\n", '*', keyLength);
 	        writer.println("---------------------------");
 	        
 	    } catch (IOException e) {
