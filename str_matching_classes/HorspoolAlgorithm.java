@@ -27,7 +27,6 @@ public class HorspoolAlgorithm extends MatchingAlgorithms {
         int n=text.length();
         int[] table=badTable(pattern);
         int i=m-1;
-        long start=System.nanoTime(); 
         while(i<n){
             int k=0;
             while(k<m){
@@ -45,7 +44,5 @@ public class HorspoolAlgorithm extends MatchingAlgorithms {
                 }
             i+=table[text.charAt(i)];
         }
-        long end=System.nanoTime();
-        timeElapsed=end-start;
     }
 }

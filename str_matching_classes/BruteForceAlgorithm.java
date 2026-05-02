@@ -11,7 +11,6 @@ public class BruteForceAlgorithm extends MatchingAlgorithms{
 	
 	@Override
 	public void search(String text) {
-		long start = System.nanoTime();
 		int j = 0; // text index, i will have shorter span
 		int i;
 		int matchLength = 0;
@@ -35,8 +34,5 @@ public class BruteForceAlgorithm extends MatchingAlgorithms{
 				}
 			}
 		} while(j <= textLength - keyLength);
-		
-		long end = System.nanoTime();
-		timeElapsed = end - start;
 	}
 }

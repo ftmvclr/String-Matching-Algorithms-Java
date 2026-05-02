@@ -33,8 +33,11 @@ abstract class MatchingAlgorithms {
         keyLength = keyPattern.length();
         // search
 		for(MatchingAlgorithms algo : algosArray){
+			long start = System.nanoTime();
             algo.search(text.toString());
-			
+            long end = System.nanoTime();
+            algo.timeElapsed = end - start;
+            
             if(algo instanceof HorspoolAlgorithm) {
             	printStatistics(algo, "horspoolReport.txt");
 				printBadSymbolTable(HorspoolAlgorithm.badSymbolTable, "horspoolReport.txt");
