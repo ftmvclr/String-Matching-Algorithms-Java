@@ -18,6 +18,7 @@ abstract class MatchingAlgorithms {
 	protected static int keyLength;
  	protected static String keyPattern;
  	protected static long textLength;
+ 	static int cc;
 	
 	public static void main(String[] args) throws IOException{
 		MatchingAlgorithms brute = new BruteForceAlgorithm(new PrintWriter("bruteOutput.html"));
@@ -111,7 +112,8 @@ abstract class MatchingAlgorithms {
 	
 	public static void printStatistics(MatchingAlgorithms algo, String outFileName, String inFileName) {
 		try (PrintWriter writer = new PrintWriter(new FileWriter(outFileName, true))) { // append? true
-			writer.printf("Searched Key: %s in the file: %s", keyPattern, inFileName);
+			if(cc++ == 0)
+				writer.printf("Searched Key: %s in the file: %s\n", keyPattern, inFileName);
 			writer.println("    " + algo.getClass().getSimpleName() + "    ");
 			writer.println("  Occurrences  : " + algo.instanceCount);
 			writer.println("  Comparisons  : " + algo.noOfComparisons);
