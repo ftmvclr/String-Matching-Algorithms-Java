@@ -26,7 +26,7 @@ abstract class MatchingAlgorithms {
 		MatchingAlgorithms algosArray[] = {brute, boyer, horspool};
 		
 		// text
-		String text = Files.readString(Path.of("AksuBieber.html"));		
+		String text = Files.readString(Path.of("bitStrings2.html"));		
 		textLength = text.length();
         // key
 		keyPattern = Files.readString(Path.of("key.txt"));
@@ -39,16 +39,16 @@ abstract class MatchingAlgorithms {
             algo.timeElapsed = end - start;
             
             if(algo instanceof HorspoolAlgorithm) {
-            	printStatistics(algo, "horspoolReport.txt");
-				printBadSymbolTable(HorspoolAlgorithm.badSymbolTable, "horspoolReport.txt");
+            	printStatistics(algo, "Report.txt");
+				printBadSymbolTable(HorspoolAlgorithm.badSymbolTable, "Report.txt");
             }
             else if(algo instanceof BoyerMooresAlgorithm) {
-            	printStatistics(algo, "boyerReport.txt");
-            	printGoodSuffixTable(((BoyerMooresAlgorithm)algo).goodSuffixTable, "boyerReport.txt");
-            	printBadSymbolTable(HorspoolAlgorithm.badSymbolTable, "boyerReport.txt");
+            	printStatistics(algo, "Report.txt");
+            	printGoodSuffixTable(((BoyerMooresAlgorithm)algo).goodSuffixTable, "Report.txt");
+            	printBadSymbolTable(HorspoolAlgorithm.badSymbolTable, "Report.txt");
             }
             else
-            	printStatistics(algo, "bruteReport.txt");
+            	printStatistics(algo, "Report.txt");
             StringBuilder copy = new StringBuilder(text); 
             highlightHtml(algo, copy);
 		}
@@ -108,6 +108,7 @@ abstract class MatchingAlgorithms {
 	
 	public static void printStatistics(MatchingAlgorithms algo, String fileName) {
 		try (PrintWriter writer = new PrintWriter(new FileWriter(fileName, true))) { // append? true
+			writer.printf("Searched Key: %s in the file: ", keyPattern);
 			writer.println("    " + algo.getClass().getSimpleName() + "    ");
 			writer.println("  Occurrences  : " + algo.instanceCount);
 			writer.println("  Comparisons  : " + algo.noOfComparisons);
