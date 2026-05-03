@@ -1,0 +1,900 @@
+Searched Key: 111 in the file: bitStrings1.html
+    BruteForceAlgorithm    
+  Occurrences  : 130611
+  Comparisons  : 1949155
+  Time(ms)     : 24.446416
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 130611
+  Comparisons  : 927719
+  Time(ms)     : 7.064625
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "1"                |   2
+     2 | "11"               |   1
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '1'    |    1
+    '*'    |    3
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 130611
+  Comparisons  : 1029754
+  Time(ms)     : 6.3145
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '1'    |    1
+    '*'    |    3
+---------------------------
+Searched Key: 111 in the file: bitStrings2.html
+    BruteForceAlgorithm    
+  Occurrences  : 114900
+  Comparisons  : 1751543
+  Time(ms)     : 22.936417
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 114900
+  Comparisons  : 830147
+  Time(ms)     : 6.804792
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "1"                |   2
+     2 | "11"               |   1
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '1'    |    1
+    '*'    |    3
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 114900
+  Comparisons  : 921946
+  Time(ms)     : 6.163667
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '1'    |    1
+    '*'    |    3
+---------------------------
+Searched Key: 111 in the file: bitStrings3.html
+    BruteForceAlgorithm    
+  Occurrences  : 145141
+  Comparisons  : 2099866
+  Time(ms)     : 17.84475
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 145141
+  Comparisons  : 1007770
+  Time(ms)     : 7.661333
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "1"                |   2
+     2 | "11"               |   1
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '1'    |    1
+    '*'    |    3
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 145141
+  Comparisons  : 1118070
+  Time(ms)     : 6.77325
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '1'    |    1
+    '*'    |    3
+---------------------------
+Searched Key: 1011 in the file: bitStrings1.html
+    BruteForceAlgorithm    
+  Occurrences  : 64006
+  Comparisons  : 2080887
+  Time(ms)     : 11.954542
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 64006
+  Comparisons  : 1059947
+  Time(ms)     : 7.647125
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "1"                |   1
+     2 | "11"               |   3
+     3 | "011"              |   3
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    2
+    '1'    |    1
+    '*'    |    4
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 64006
+  Comparisons  : 1462878
+  Time(ms)     : 7.706125
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    2
+    '1'    |    1
+    '*'    |    4
+---------------------------
+Searched Key: 1011 in the file: bitStrings2.html
+    BruteForceAlgorithm    
+  Occurrences  : 55332
+  Comparisons  : 1866945
+  Time(ms)     : 22.94125
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 55332
+  Comparisons  : 940217
+  Time(ms)     : 6.908916
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "1"                |   1
+     2 | "11"               |   3
+     3 | "011"              |   3
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    2
+    '1'    |    1
+    '*'    |    4
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 55332
+  Comparisons  : 1291460
+  Time(ms)     : 7.136083
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    2
+    '1'    |    1
+    '*'    |    4
+---------------------------
+Searched Key: 1011 in the file: bitStrings3.html
+    BruteForceAlgorithm    
+  Occurrences  : 71372
+  Comparisons  : 2243904
+  Time(ms)     : 24.651666
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 71372
+  Comparisons  : 1156381
+  Time(ms)     : 8.498333
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "1"                |   1
+     2 | "11"               |   3
+     3 | "011"              |   3
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    2
+    '1'    |    1
+    '*'    |    4
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 71372
+  Comparisons  : 1607299
+  Time(ms)     : 8.589125
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    2
+    '1'    |    1
+    '*'    |    4
+---------------------------
+Searched Key: 01010101 in the file: bitStrings1.html
+    BruteForceAlgorithm    
+  Occurrences  : 3616
+  Comparisons  : 2198701
+  Time(ms)     : 14.010458
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 3616
+  Comparisons  : 635940
+  Time(ms)     : 7.144
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "1"                |   8
+     2 | "01"               |   6
+     3 | "101"              |   6
+     4 | "0101"             |   4
+     5 | "10101"            |   4
+     6 | "010101"           |   2
+     7 | "1010101"          |   2
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    1
+    '1'    |    2
+    '*'    |    8
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 3616
+  Comparisons  : 1474558
+  Time(ms)     : 7.206625
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    1
+    '1'    |    2
+    '*'    |    8
+---------------------------
+Searched Key: 01010101 in the file: bitStrings2.html
+    BruteForceAlgorithm    
+  Occurrences  : 3051
+  Comparisons  : 1968514
+  Time(ms)     : 17.006375
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 3051
+  Comparisons  : 564158
+  Time(ms)     : 4.989792
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "1"                |   8
+     2 | "01"               |   6
+     3 | "101"              |   6
+     4 | "0101"             |   4
+     5 | "10101"            |   4
+     6 | "010101"           |   2
+     7 | "1010101"          |   2
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    1
+    '1'    |    2
+    '*'    |    8
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 3051
+  Comparisons  : 1266215
+  Time(ms)     : 6.499792
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    1
+    '1'    |    2
+    '*'    |    8
+---------------------------
+Searched Key: 01010101 in the file: bitStrings3.html
+    BruteForceAlgorithm    
+  Occurrences  : 4146
+  Comparisons  : 2375022
+  Time(ms)     : 26.356917
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 4146
+  Comparisons  : 700393
+  Time(ms)     : 5.387208
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "1"                |   8
+     2 | "01"               |   6
+     3 | "101"              |   6
+     4 | "0101"             |   4
+     5 | "10101"            |   4
+     6 | "010101"           |   2
+     7 | "1010101"          |   2
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    1
+    '1'    |    2
+    '*'    |    8
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 4146
+  Comparisons  : 1673153
+  Time(ms)     : 7.576125
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    1
+    '1'    |    2
+    '*'    |    8
+---------------------------
+Searched Key: 10110100 in the file: bitStrings1.html
+    BruteForceAlgorithm    
+  Occurrences  : 3647
+  Comparisons  : 2198910
+  Time(ms)     : 11.859291
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 3647
+  Comparisons  : 697395
+  Time(ms)     : 5.533875
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "0"                |   1
+     2 | "00"               |   8
+     3 | "100"              |   8
+     4 | "0100"             |   8
+     5 | "10100"            |   8
+     6 | "110100"           |   8
+     7 | "0110100"          |   8
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    1
+    '1'    |    2
+    '*'    |    8
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 3647
+  Comparisons  : 1473329
+  Time(ms)     : 7.049125
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    1
+    '1'    |    2
+    '*'    |    8
+---------------------------
+Searched Key: 10110100 in the file: bitStrings2.html
+    BruteForceAlgorithm    
+  Occurrences  : 3003
+  Comparisons  : 1968111
+  Time(ms)     : 23.940375
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 3003
+  Comparisons  : 615612
+  Time(ms)     : 4.971959
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "0"                |   1
+     2 | "00"               |   8
+     3 | "100"              |   8
+     4 | "0100"             |   8
+     5 | "10100"            |   8
+     6 | "110100"           |   8
+     7 | "0110100"          |   8
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    1
+    '1'    |    2
+    '*'    |    8
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 3003
+  Comparisons  : 1265842
+  Time(ms)     : 6.365459
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    1
+    '1'    |    2
+    '*'    |    8
+---------------------------
+Searched Key: 10110100 in the file: bitStrings3.html
+    BruteForceAlgorithm    
+  Occurrences  : 4194
+  Comparisons  : 2376242
+  Time(ms)     : 24.635042
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 4194
+  Comparisons  : 767265
+  Time(ms)     : 5.511792
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "0"                |   1
+     2 | "00"               |   8
+     3 | "100"              |   8
+     4 | "0100"             |   8
+     5 | "10100"            |   8
+     6 | "110100"           |   8
+     7 | "0110100"          |   8
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    1
+    '1'    |    2
+    '*'    |    8
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 4194
+  Comparisons  : 1672947
+  Time(ms)     : 7.568125
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    1
+    '1'    |    2
+    '*'    |    8
+---------------------------
+Searched Key: 1011001011001101 in the file: bitStrings1.html
+    BruteForceAlgorithm    
+  Occurrences  : 7
+  Comparisons  : 2205702
+  Time(ms)     : 15.748458
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 7
+  Comparisons  : 665333
+  Time(ms)     : 6.287625
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "1"                |   2
+     2 | "01"               |   3
+     3 | "101"              |   7
+     4 | "1101"             |  13
+     5 | "01101"            |  13
+     6 | "001101"           |  13
+     7 | "1001101"          |  13
+     8 | "11001101"         |  13
+     9 | "011001101"        |  13
+    10 | "1011001101"       |  13
+    11 | "01011001101"      |  13
+    12 | "001011001101"     |  13
+    13 | "1001011001101"    |  13
+    14 | "11001011001101"   |  13
+    15 | "011001011001101"  |  13
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    1
+    '1'    |    2
+    '*'    |   16
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 7
+  Comparisons  : 1304543
+  Time(ms)     : 7.468458
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    1
+    '1'    |    2
+    '*'    |   16
+---------------------------
+Searched Key: 1011001011001101 in the file: bitStrings2.html
+    BruteForceAlgorithm    
+  Occurrences  : 5
+  Comparisons  : 1973679
+  Time(ms)     : 26.250625
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 5
+  Comparisons  : 588010
+  Time(ms)     : 10.065667
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "1"                |   2
+     2 | "01"               |   3
+     3 | "101"              |   7
+     4 | "1101"             |  13
+     5 | "01101"            |  13
+     6 | "001101"           |  13
+     7 | "1001101"          |  13
+     8 | "11001101"         |  13
+     9 | "011001101"        |  13
+    10 | "1011001101"       |  13
+    11 | "01011001101"      |  13
+    12 | "001011001101"     |  13
+    13 | "1001011001101"    |  13
+    14 | "11001011001101"   |  13
+    15 | "011001011001101"  |  13
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    1
+    '1'    |    2
+    '*'    |   16
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 5
+  Comparisons  : 1099691
+  Time(ms)     : 6.643083
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    1
+    '1'    |    2
+    '*'    |   16
+---------------------------
+Searched Key: 1011001011001101 in the file: bitStrings3.html
+    BruteForceAlgorithm    
+  Occurrences  : 21
+  Comparisons  : 2384796
+  Time(ms)     : 25.8265
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 21
+  Comparisons  : 799182
+  Time(ms)     : 7.860166
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "1"                |   2
+     2 | "01"               |   3
+     3 | "101"              |   7
+     4 | "1101"             |  13
+     5 | "01101"            |  13
+     6 | "001101"           |  13
+     7 | "1001101"          |  13
+     8 | "11001101"         |  13
+     9 | "011001101"        |  13
+    10 | "1011001101"       |  13
+    11 | "01011001101"      |  13
+    12 | "001011001101"     |  13
+    13 | "1001011001101"    |  13
+    14 | "11001011001101"   |  13
+    15 | "011001011001101"  |  13
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    1
+    '1'    |    2
+    '*'    |   16
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 21
+  Comparisons  : 1546912
+  Time(ms)     : 9.388667
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    1
+    '1'    |    2
+    '*'    |   16
+---------------------------
+Searched Key: 0110100110010110 in the file: bitStrings1.html
+    BruteForceAlgorithm    
+  Occurrences  : 8
+  Comparisons  : 2206575
+  Time(ms)     : 12.226792
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 8
+  Comparisons  : 504569
+  Time(ms)     : 4.481
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "0"                | 5
+     2 | "10"               | 3
+     3 | "110"              | 15
+     4 | "0110"             | 6
+     5 | "10110"            | 12
+     6 | "010110"           | 12
+     7 | "0010110"          | 12
+     8 | "10010110"         | 12
+     9 | "110010110"        | 12
+    10 | "0110010110"       | 12
+    11 | "00110010110"      | 12
+    12 | "100110010110"     | 12
+    13 | "0100110010110"    | 12
+    14 | "10100110010110"   | 12
+    15 | "110100110010110"  | 12
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    3
+    '1'    |    1
+    '*'    |   16
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 8
+  Comparisons  : 1080988
+  Time(ms)     : 6.034459
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    3
+    '1'    |    1
+    '*'    |   16
+---------------------------
+Searched Key: 0110100110010110 in the file: bitStrings2.html
+    BruteForceAlgorithm    
+  Occurrences  : 6
+  Comparisons  : 1973472
+  Time(ms)     : 25.493708
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 6
+  Comparisons  : 446647
+  Time(ms)     : 5.832625
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "0"                | 5
+     2 | "10"               | 3
+     3 | "110"              | 15
+     4 | "0110"             | 6
+     5 | "10110"            | 12
+     6 | "010110"           | 12
+     7 | "0010110"          | 12
+     8 | "10010110"         | 12
+     9 | "110010110"        | 12
+    10 | "0110010110"       | 12
+    11 | "00110010110"      | 12
+    12 | "100110010110"     | 12
+    13 | "0100110010110"    | 12
+    14 | "10100110010110"   | 12
+    15 | "110100110010110"  | 12
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    3
+    '1'    |    1
+    '*'    |   16
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 6
+  Comparisons  : 928817
+  Time(ms)     : 6.894667
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    3
+    '1'    |    1
+    '*'    |   16
+---------------------------
+Searched Key: 0110100110010110 in the file: bitStrings3.html
+    BruteForceAlgorithm    
+  Occurrences  : 14
+  Comparisons  : 2384084
+  Time(ms)     : 24.839416
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 14
+  Comparisons  : 575883
+  Time(ms)     : 6.36225
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "0"                | 5
+     2 | "10"               | 3
+     3 | "110"              | 15
+     4 | "0110"             | 6
+     5 | "10110"            | 12
+     6 | "010110"           | 12
+     7 | "0010110"          | 12
+     8 | "10010110"         | 12
+     9 | "110010110"        | 12
+    10 | "0110010110"       | 12
+    11 | "00110010110"      | 12
+    12 | "100110010110"     | 12
+    13 | "0100110010110"    | 12
+    14 | "10100110010110"   | 12
+    15 | "110100110010110"  | 12
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    3
+    '1'    |    1
+    '*'    |   16
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 14
+  Comparisons  : 1272076
+  Time(ms)     : 8.268208
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    3
+    '1'    |    1
+    '*'    |   16
+---------------------------
+Searched Key: 0000111100110010 in the file: bitStrings1.html
+    BruteForceAlgorithm    
+  Occurrences  : 25
+  Comparisons  : 2206368
+  Time(ms)     : 16.386334
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 25
+  Comparisons  : 589692
+  Time(ms)     : 5.489084
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "0"                | 2
+     2 | "10"               | 3
+     3 | "010"              | 15
+     4 | "0010"             | 15
+     5 | "10010"            | 15
+     6 | "110010"           | 15
+     7 | "0110010"          | 15
+     8 | "00110010"         | 15
+     9 | "100110010"        | 15
+    10 | "1100110010"       | 15
+    11 | "11100110010"      | 15
+    12 | "111100110010"     | 15
+    13 | "0111100110010"    | 15
+    14 | "00111100110010"   | 15
+    15 | "000111100110010"  | 15
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    2
+    '1'    |    1
+    '*'    |   16
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 25
+  Comparisons  : 1305516
+  Time(ms)     : 7.787917
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    2
+    '1'    |    1
+    '*'    |   16
+---------------------------
+Searched Key: 0000111100110010 in the file: bitStrings2.html
+    BruteForceAlgorithm    
+  Occurrences  : 7
+  Comparisons  : 1974019
+  Time(ms)     : 23.427959
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 7
+  Comparisons  : 522604
+  Time(ms)     : 9.135042
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "0"                | 2
+     2 | "10"               | 3
+     3 | "010"              | 15
+     4 | "0010"             | 15
+     5 | "10010"            | 15
+     6 | "110010"           | 15
+     7 | "0110010"          | 15
+     8 | "00110010"         | 15
+     9 | "100110010"        | 15
+    10 | "1100110010"       | 15
+    11 | "11100110010"      | 15
+    12 | "111100110010"     | 15
+    13 | "0111100110010"    | 15
+    14 | "00111100110010"   | 15
+    15 | "000111100110010"  | 15
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    2
+    '1'    |    1
+    '*'    |   16
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 7
+  Comparisons  : 1099922
+  Time(ms)     : 9.999541
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    2
+    '1'    |    1
+    '*'    |   16
+---------------------------
+Searched Key: 0000111100110010 in the file: bitStrings3.html
+    BruteForceAlgorithm    
+  Occurrences  : 11
+  Comparisons  : 2383540
+  Time(ms)     : 26.759584
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 11
+  Comparisons  : 703295
+  Time(ms)     : 7.240209
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "0"                | 2
+     2 | "10"               | 3
+     3 | "010"              | 15
+     4 | "0010"             | 15
+     5 | "10010"            | 15
+     6 | "110010"           | 15
+     7 | "0110010"          | 15
+     8 | "00110010"         | 15
+     9 | "100110010"        | 15
+    10 | "1100110010"       | 15
+    11 | "11100110010"      | 15
+    12 | "111100110010"     | 15
+    13 | "0111100110010"    | 15
+    14 | "00111100110010"   | 15
+    15 | "000111100110010"  | 15
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    2
+    '1'    |    1
+    '*'    |   16
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 11
+  Comparisons  : 1542041
+  Time(ms)     : 12.111
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '0'    |    2
+    '1'    |    1
+    '*'    |   16
+---------------------------

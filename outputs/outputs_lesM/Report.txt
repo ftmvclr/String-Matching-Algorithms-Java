@@ -1,0 +1,315 @@
+Searched Key: he in the file: Les_Miserables.html
+    BruteForceAlgorithm    
+  Occurrences  : 75872
+  Comparisons  : 3763387
+  Time(ms)     : 26.478292
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 75872
+  Comparisons  : 2080304
+  Time(ms)     : 14.458083
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "e"                | 2
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'e'    |    2
+    'h'    |    1
+    '*'    |    2
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 75872
+  Comparisons  : 2044159
+  Time(ms)     : 11.7865
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'e'    |    2
+    'h'    |    1
+    '*'    |    2
+---------------------------
+Searched Key: that in the file: Les_Miserables.html
+    BruteForceAlgorithm    
+  Occurrences  : 7337
+  Comparisons  : 3902011
+  Time(ms)     : 14.720333
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 7337
+  Comparisons  : 1069764
+  Time(ms)     : 7.919084
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "t"                | 3
+     2 | "at"               | 3
+     3 | "hat"              | 3
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'a'    |    1
+    'h'    |    2
+    't'    |    3
+    '*'    |    4
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 7337
+  Comparisons  : 1069764
+  Time(ms)     : 7.621917
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'a'    |    1
+    'h'    |    2
+    't'    |    3
+    '*'    |    4
+---------------------------
+Searched Key: elle in the file: Les_Miserables.html
+    BruteForceAlgorithm    
+  Occurrences  : 498
+  Comparisons  : 3933193
+  Time(ms)     : 17.193125
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 498
+  Comparisons  : 1043135
+  Time(ms)     : 8.098458
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "e"                | 3
+     2 | "le"               | 3
+     3 | "lle"              | 3
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'e'    |    3
+    'l'    |    1
+    '*'    |    4
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 498
+  Comparisons  : 1043135
+  Time(ms)     : 6.914666
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'e'    |    3
+    'l'    |    1
+    '*'    |    4
+---------------------------
+Searched Key: Valjean in the file: Les_Miserables.html
+    BruteForceAlgorithm    
+  Occurrences  : 1106
+  Comparisons  : 3598437
+  Time(ms)     : 14.43625
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 1106
+  Comparisons  : 631979
+  Time(ms)     : 5.760333
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "n"                | 7
+     2 | "an"               | 7
+     3 | "ean"              | 7
+     4 | "jean"             | 7
+     5 | "ljean"            | 7
+     6 | "aljean"           | 7
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'V'    |    6
+    'a'    |    1
+    'e'    |    2
+    'j'    |    3
+    'l'    |    4
+    'n'    |    7
+    '*'    |    7
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 1106
+  Comparisons  : 631205
+  Time(ms)     : 5.280708
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'V'    |    6
+    'a'    |    1
+    'e'    |    2
+    'j'    |    3
+    'l'    |    4
+    'n'    |    7
+    '*'    |    7
+---------------------------
+Searched Key: happiness in the file: Les_Miserables.html
+    BruteForceAlgorithm    
+  Occurrences  : 116
+  Comparisons  : 3794052
+  Time(ms)     : 28.029833
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 116
+  Comparisons  : 505438
+  Time(ms)     : 5.875125
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "s"                | 1
+     2 | "ss"               | 9
+     3 | "ess"              | 9
+     4 | "ness"             | 9
+     5 | "iness"            | 9
+     6 | "piness"           | 9
+     7 | "ppiness"          | 9
+     8 | "appiness"         | 9
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'a'    |    7
+    'e'    |    2
+    'h'    |    8
+    'i'    |    4
+    'n'    |    3
+    'p'    |    5
+    's'    |    1
+    '*'    |    9
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 116
+  Comparisons  : 520562
+  Time(ms)     : 4.692667
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'a'    |    7
+    'e'    |    2
+    'h'    |    8
+    'i'    |    4
+    'n'    |    3
+    'p'    |    5
+    's'    |    1
+    '*'    |    9
+---------------------------
+Searched Key: committee in the file: Les_Miserables.html
+    BruteForceAlgorithm    
+  Occurrences  : 5
+  Comparisons  : 3669031
+  Time(ms)     : 26.745667
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 5
+  Comparisons  : 496655
+  Time(ms)     : 6.544333
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "e"                | 1
+     2 | "ee"               | 9
+     3 | "tee"              | 9
+     4 | "ttee"             | 9
+     5 | "ittee"            | 9
+     6 | "mittee"           | 9
+     7 | "mmittee"          | 9
+     8 | "ommittee"         | 9
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'c'    |    8
+    'e'    |    1
+    'i'    |    4
+    'm'    |    5
+    'o'    |    7
+    't'    |    2
+    '*'    |    9
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 5
+  Comparisons  : 530277
+  Time(ms)     : 4.8485
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'c'    |    8
+    'e'    |    1
+    'i'    |    4
+    'm'    |    5
+    'o'    |    7
+    't'    |    2
+    '*'    |    9
+---------------------------
+Searched Key: xylophone in the file: Les_Miserables.html
+    BruteForceAlgorithm    
+  Occurrences  : 0
+  Comparisons  : 3594347
+  Time(ms)     : 20.455541
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 0
+  Comparisons  : 507943
+  Time(ms)     : 6.945792
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "e"                | 9
+     2 | "ne"               | 9
+     3 | "one"              | 9
+     4 | "hone"             | 9
+     5 | "phone"            | 9
+     6 | "ophone"           | 9
+     7 | "lophone"          | 9
+     8 | "ylophone"         | 9
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'e'    |    9
+    'h'    |    3
+    'l'    |    6
+    'n'    |    1
+    'o'    |    2
+    'p'    |    4
+    'x'    |    8
+    'y'    |    7
+    '*'    |    9
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 0
+  Comparisons  : 507943
+  Time(ms)     : 4.935709
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'e'    |    9
+    'h'    |    3
+    'l'    |    6
+    'n'    |    1
+    'o'    |    2
+    'p'    |    4
+    'x'    |    8
+    'y'    |    7
+    '*'    |    9
+---------------------------

@@ -1,0 +1,390 @@
+Searched Key: he in the file: movieScripts.html
+    BruteForceAlgorithm    
+  Occurrences  : 10046
+  Comparisons  : 1099948
+  Time(ms)     : 17.398834
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 10046
+  Comparisons  : 575184
+  Time(ms)     : 4.939458
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "e"                | 2
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'e'    |    2
+    'h'    |    1
+    '*'    |    2
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 10046
+  Comparisons  : 570459
+  Time(ms)     : 4.517292
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'e'    |    2
+    'h'    |    1
+    '*'    |    2
+---------------------------
+Searched Key: look in the file: movieScripts.html
+    BruteForceAlgorithm    
+  Occurrences  : 433
+  Comparisons  : 1096776
+  Time(ms)     : 18.37275
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 433
+  Comparisons  : 279444
+  Time(ms)     : 4.599166
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "k"                | 4
+     2 | "ok"               | 4
+     3 | "ook"              | 4
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'k'    |    4
+    'l'    |    3
+    'o'    |    1
+    '*'    |    4
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 433
+  Comparisons  : 279145
+  Time(ms)     : 3.799792
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'k'    |    4
+    'l'    |    3
+    'o'    |    1
+    '*'    |    4
+---------------------------
+Searched Key: the in the file: movieScripts.html
+    BruteForceAlgorithm    
+  Occurrences  : 5558
+  Comparisons  : 1115176
+  Time(ms)     : 17.643542
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 5558
+  Comparisons  : 398164
+  Time(ms)     : 4.002458
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "e"                | 3
+     2 | "he"               | 3
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'e'    |    3
+    'h'    |    1
+    't'    |    2
+    '*'    |    3
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 5558
+  Comparisons  : 394920
+  Time(ms)     : 3.104833
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'e'    |    3
+    'h'    |    1
+    't'    |    2
+    '*'    |    3
+---------------------------
+Searched Key: little in the file: movieScripts.html
+    BruteForceAlgorithm    
+  Occurrences  : 100
+  Comparisons  : 1096392
+  Time(ms)     : 11.985167
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 100
+  Comparisons  : 197169
+  Time(ms)     : 3.485916
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "e"                | 6
+     2 | "le"               | 6
+     3 | "tle"              | 6
+     4 | "ttle"             | 6
+     5 | "ittle"            | 6
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'e'    |    6
+    'i'    |    4
+    'l'    |    1
+    't'    |    2
+    '*'    |    6
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 100
+  Comparisons  : 197102
+  Time(ms)     : 2.216833
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'e'    |    6
+    'i'    |    4
+    'l'    |    1
+    't'    |    2
+    '*'    |    6
+---------------------------
+Searched Key: WALL-E in the file: movieScripts.html
+    BruteForceAlgorithm    
+  Occurrences  : 126
+  Comparisons  : 1080643
+  Time(ms)     : 16.602833
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 126
+  Comparisons  : 183516
+  Time(ms)     : 4.203667
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "E"                | 6
+     2 | "-E"               | 6
+     3 | "L-E"              | 6
+     4 | "LL-E"             | 6
+     5 | "ALL-E"            | 6
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '-'    |    1
+    'A'    |    4
+    'E'    |    6
+    'L'    |    2
+    'W'    |    5
+    '*'    |    6
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 126
+  Comparisons  : 183422
+  Time(ms)     : 2.987958
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '-'    |    1
+    'A'    |    4
+    'E'    |    6
+    'L'    |    2
+    'W'    |    5
+    '*'    |    6
+---------------------------
+Searched Key: flame-belch in the file: movieScripts.html
+    BruteForceAlgorithm    
+  Occurrences  : 1
+  Comparisons  : 1085017
+  Time(ms)     : 12.929542
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 1
+  Comparisons  : 107576
+  Time(ms)     : 4.569875
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "h"                | 11
+     2 | "ch"               | 11
+     3 | "lch"              | 11
+     4 | "elch"             | 11
+     5 | "belch"            | 11
+     6 | "-belch"           | 11
+     7 | "e-belch"          | 11
+     8 | "me-belch"         | 11
+     9 | "ame-belch"        | 11
+    10 | "lame-belch"       | 11
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '-'    |    5
+    'a'    |    8
+    'b'    |    4
+    'c'    |    1
+    'e'    |    3
+    'f'    |   10
+    'h'    |   11
+    'l'    |    2
+    'm'    |    7
+    '*'    |   11
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 1
+  Comparisons  : 107571
+  Time(ms)     : 2.711625
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    '-'    |    5
+    'a'    |    8
+    'b'    |    4
+    'c'    |    1
+    'e'    |    3
+    'f'    |   10
+    'h'    |   11
+    'l'    |    2
+    'm'    |    7
+    '*'    |   11
+---------------------------
+Searched Key: Do you want to build a snowman in the file: movieScripts.html
+    BruteForceAlgorithm    
+  Occurrences  : 1
+  Comparisons  : 1081311
+  Time(ms)     : 20.78225
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 1
+  Comparisons  : 78748
+  Time(ms)     : 3.925875
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "n"                | 5
+     2 | "an"               | 20
+     3 | "man"              | 30
+     4 | "wman"             | 30
+     5 | "owman"            | 30
+     6 | "nowman"           | 30
+     7 | "snowman"          | 30
+     8 | " snowman"         | 30
+     9 | "a snowman"        | 30
+    10 | " a snowman"       | 30
+    11 | "d a snowman"      | 30
+    12 | "ld a snowman"     | 30
+    13 | "ild a snowman"    | 30
+    14 | "uild a snowman"   | 30
+    15 | "build a snowman"  | 30
+    16 | " build a snowman" | 30
+    17 | "o build a snowman" | 30
+    18 | "to build a snowman" | 30
+    19 | " to build a snowman" | 30
+    20 | "t to build a snowman" | 30
+    21 | "nt to build a snowman" | 30
+    22 | "ant to build a snowman" | 30
+    23 | "want to build a snowman" | 30
+    24 | " want to build a snowman" | 30
+    25 | "u want to build a snowman" | 30
+    26 | "ou want to build a snowman" | 30
+    27 | "you want to build a snowman" | 30
+    28 | " you want to build a snowman" | 30
+    29 | "o you want to build a snowman" | 30
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    ' '    |    7
+    'D'    |   29
+    'a'    |    1
+    'b'    |   14
+    'd'    |   10
+    'i'    |   12
+    'l'    |   11
+    'm'    |    2
+    'n'    |    5
+    'o'    |    4
+    's'    |    6
+    't'    |   17
+    'u'    |   13
+    'w'    |    3
+    'y'    |   26
+    '*'    |   30
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 1
+  Comparisons  : 80141
+  Time(ms)     : 2.2735
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    ' '    |    7
+    'D'    |   29
+    'a'    |    1
+    'b'    |   14
+    'd'    |   10
+    'i'    |   12
+    'l'    |   11
+    'm'    |    2
+    'n'    |    5
+    'o'    |    4
+    's'    |    6
+    't'    |   17
+    'u'    |   13
+    'w'    |    3
+    'y'    |   26
+    '*'    |   30
+---------------------------
+Searched Key: follow in the file: movieScripts.html
+    BruteForceAlgorithm    
+  Occurrences  : 70
+  Comparisons  : 1085473
+  Time(ms)     : 15.295375
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 70
+  Comparisons  : 188739
+  Time(ms)     : 4.352583
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "w"                | 6
+     2 | "ow"               | 6
+     3 | "low"              | 6
+     4 | "llow"             | 6
+     5 | "ollow"            | 6
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'f'    |    5
+    'l'    |    2
+    'o'    |    1
+    'w'    |    6
+    '*'    |    6
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 70
+  Comparisons  : 188685
+  Time(ms)     : 2.605542
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'f'    |    5
+    'l'    |    2
+    'o'    |    1
+    'w'    |    6
+    '*'    |    6
+---------------------------

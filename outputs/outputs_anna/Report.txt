@@ -1,0 +1,381 @@
+Searched Key: he in the file: anna.html
+    BruteForceAlgorithm    
+  Occurrences  : 46358
+  Comparisons  : 2299336
+  Time(ms)     : 14.892042
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 46358
+  Comparisons  : 1264596
+  Time(ms)     : 9.0795
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "e"                | 2
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'e'    |    2
+    'h'    |    1
+    '*'    |    2
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 46358
+  Comparisons  : 1240632
+  Time(ms)     : 8.076833
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'e'    |    2
+    'h'    |    1
+    '*'    |    2
+---------------------------
+Searched Key: that in the file: anna.html
+    BruteForceAlgorithm    
+  Occurrences  : 5303
+  Comparisons  : 2379458
+  Time(ms)     : 22.509708
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 5303
+  Comparisons  : 655087
+  Time(ms)     : 5.506042
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "t"                | 3
+     2 | "at"               | 3
+     3 | "hat"              | 3
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'a'    |    1
+    'h'    |    2
+    't'    |    3
+    '*'    |    4
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 5303
+  Comparisons  : 655087
+  Time(ms)     : 5.287792
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'a'    |    1
+    'h'    |    2
+    't'    |    3
+    '*'    |    4
+---------------------------
+Searched Key: Anna in the file: anna.html
+    BruteForceAlgorithm    
+  Occurrences  : 827
+  Comparisons  : 2202027
+  Time(ms)     : 23.38175
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 827
+  Comparisons  : 603545
+  Time(ms)     : 5.533292
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "a"                | 4
+     2 | "na"               | 4
+     3 | "nna"              | 4
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'A'    |    3
+    'a'    |    4
+    'n'    |    1
+    '*'    |    4
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 827
+  Comparisons  : 603004
+  Time(ms)     : 4.461291
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'A'    |    3
+    'a'    |    4
+    'n'    |    1
+    '*'    |    4
+---------------------------
+Searched Key: elle in the file: anna.html
+    BruteForceAlgorithm    
+  Occurrences  : 128
+  Comparisons  : 2389409
+  Time(ms)     : 19.94875
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 128
+  Comparisons  : 630625
+  Time(ms)     : 6.4635
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "e"                | 3
+     2 | "le"               | 3
+     3 | "lle"              | 3
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'e'    |    3
+    'l'    |    1
+    '*'    |    4
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 128
+  Comparisons  : 630625
+  Time(ms)     : 4.387958
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'e'    |    3
+    'l'    |    1
+    '*'    |    4
+---------------------------
+Searched Key: happiness in the file: anna.html
+    BruteForceAlgorithm    
+  Occurrences  : 135
+  Comparisons  : 2319091
+  Time(ms)     : 18.2135
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 135
+  Comparisons  : 308811
+  Time(ms)     : 4.430959
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "s"                | 1
+     2 | "ss"               | 9
+     3 | "ess"              | 9
+     4 | "ness"             | 9
+     5 | "iness"            | 9
+     6 | "piness"           | 9
+     7 | "ppiness"          | 9
+     8 | "appiness"         | 9
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'a'    |    7
+    'e'    |    2
+    'h'    |    8
+    'i'    |    4
+    'n'    |    3
+    'p'    |    5
+    's'    |    1
+    '*'    |    9
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 135
+  Comparisons  : 318736
+  Time(ms)     : 3.628375
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'a'    |    7
+    'e'    |    2
+    'h'    |    8
+    'i'    |    4
+    'n'    |    3
+    'p'    |    5
+    's'    |    1
+    '*'    |    9
+---------------------------
+Searched Key: committee in the file: anna.html
+    BruteForceAlgorithm    
+  Occurrences  : 23
+  Comparisons  : 2236632
+  Time(ms)     : 26.167667
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 23
+  Comparisons  : 300741
+  Time(ms)     : 4.990834
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "e"                | 1
+     2 | "ee"               | 9
+     3 | "tee"              | 9
+     4 | "ttee"             | 9
+     5 | "ittee"            | 9
+     6 | "mittee"           | 9
+     7 | "mmittee"          | 9
+     8 | "ommittee"         | 9
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'c'    |    8
+    'e'    |    1
+    'i'    |    4
+    'm'    |    5
+    'o'    |    7
+    't'    |    2
+    '*'    |    9
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 23
+  Comparisons  : 319607
+  Time(ms)     : 3.34075
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'c'    |    8
+    'e'    |    1
+    'i'    |    4
+    'm'    |    5
+    'o'    |    7
+    't'    |    2
+    '*'    |    9
+---------------------------
+Searched Key: the young princess in the file: anna.html
+    BruteForceAlgorithm    
+  Occurrences  : 2
+  Comparisons  : 2412438
+  Time(ms)     : 26.008667
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 2
+  Comparisons  : 199727
+  Time(ms)     : 4.564041
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "s"                | 1
+     2 | "ss"               | 18
+     3 | "ess"              | 18
+     4 | "cess"             | 18
+     5 | "ncess"            | 18
+     6 | "incess"           | 18
+     7 | "rincess"          | 18
+     8 | "princess"         | 18
+     9 | " princess"        | 18
+    10 | "g princess"       | 18
+    11 | "ng princess"      | 18
+    12 | "ung princess"     | 18
+    13 | "oung princess"    | 18
+    14 | "young princess"   | 18
+    15 | " young princess"  | 18
+    16 | "e young princess" | 18
+    17 | "he young princess" | 18
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    ' '    |    8
+    'c'    |    3
+    'e'    |    2
+    'g'    |    9
+    'h'    |   16
+    'i'    |    5
+    'n'    |    4
+    'o'    |   12
+    'p'    |    7
+    'r'    |    6
+    's'    |    1
+    't'    |   17
+    'u'    |   11
+    'y'    |   13
+    '*'    |   18
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 2
+  Comparisons  : 207037
+  Time(ms)     : 2.854292
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    ' '    |    8
+    'c'    |    3
+    'e'    |    2
+    'g'    |    9
+    'h'    |   16
+    'i'    |    5
+    'n'    |    4
+    'o'    |   12
+    'p'    |    7
+    'r'    |    6
+    's'    |    1
+    't'    |   17
+    'u'    |   11
+    'y'    |   13
+    '*'    |   18
+---------------------------
+Searched Key: xylophone in the file: anna.html
+    BruteForceAlgorithm    
+  Occurrences  : 0
+  Comparisons  : 2197239
+  Time(ms)     : 16.610958
+---------------------------
+    BoyerMooresAlgorithm    
+  Occurrences  : 0
+  Comparisons  : 307273
+  Time(ms)     : 5.501709
+---------------------------
+----- Good Suffix Table -----
+Length (k) | Matched Suffix | Shift
+-------------------------------
+     1 | "e"                | 9
+     2 | "ne"               | 9
+     3 | "one"              | 9
+     4 | "hone"             | 9
+     5 | "phone"            | 9
+     6 | "ophone"           | 9
+     7 | "lophone"          | 9
+     8 | "ylophone"         | 9
+-------------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'e'    |    9
+    'h'    |    3
+    'l'    |    6
+    'n'    |    1
+    'o'    |    2
+    'p'    |    4
+    'x'    |    8
+    'y'    |    7
+    '*'    |    9
+---------------------------
+    HorspoolAlgorithm    
+  Occurrences  : 0
+  Comparisons  : 307273
+  Time(ms)     : 3.514208
+---------------------------
+----- Bad Symbol Table -----
+ Character |  Shift
+---------------------------
+    'e'    |    9
+    'h'    |    3
+    'l'    |    6
+    'n'    |    1
+    'o'    |    2
+    'p'    |    4
+    'x'    |    8
+    'y'    |    7
+    '*'    |    9
+---------------------------
