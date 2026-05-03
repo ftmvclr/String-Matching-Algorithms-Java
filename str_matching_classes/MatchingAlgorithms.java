@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-// import java.util.Scanner;
+import java.util.Scanner;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -25,8 +25,11 @@ abstract class MatchingAlgorithms {
 		MatchingAlgorithms horspool = new HorspoolAlgorithm(new PrintWriter("horspoolOutput.html"));
 		MatchingAlgorithms algosArray[] = {brute, boyer, horspool};
 		
+		Scanner filenameinput = new Scanner(System.in);
+		String filenamestring = filenameinput.nextLine();
+		filenameinput.close();
 		// text
-		String text = Files.readString(Path.of("bitStrings2.html"));		
+		String text = Files.readString(Path.of(filenamestring));		
 		textLength = text.length();
         // key
 		keyPattern = Files.readString(Path.of("key.txt"));
@@ -39,16 +42,16 @@ abstract class MatchingAlgorithms {
             algo.timeElapsed = end - start;
             
             if(algo instanceof HorspoolAlgorithm) {
-            	printStatistics(algo, "Report.txt");
+            	printStatistics(algo, "Report.txt", filenamestring);
 				printBadSymbolTable(HorspoolAlgorithm.badSymbolTable, "Report.txt");
             }
             else if(algo instanceof BoyerMooresAlgorithm) {
-            	printStatistics(algo, "Report.txt");
+            	printStatistics(algo, "Report.txt", filenamestring);
             	printGoodSuffixTable(((BoyerMooresAlgorithm)algo).goodSuffixTable, "Report.txt");
             	printBadSymbolTable(HorspoolAlgorithm.badSymbolTable, "Report.txt");
             }
             else
-            	printStatistics(algo, "Report.txt");
+            	printStatistics(algo, "Report.txt", filenamestring);
             StringBuilder copy = new StringBuilder(text); 
             highlightHtml(algo, copy);
 		}
@@ -106,9 +109,9 @@ abstract class MatchingAlgorithms {
 	    }
 	}
 	
-	public static void printStatistics(MatchingAlgorithms algo, String fileName) {
-		try (PrintWriter writer = new PrintWriter(new FileWriter(fileName, true))) { // append? true
-			writer.printf("Searched Key: %s in the file: ", keyPattern);
+	public static void printStatistics(MatchingAlgorithms algo, String outFileName, String inFileName) {
+		try (PrintWriter writer = new PrintWriter(new FileWriter(outFileName, true))) { // append? true
+			writer.printf("Searched Key: %s in the file: %s", keyPattern, inFileName);
 			writer.println("    " + algo.getClass().getSimpleName() + "    ");
 			writer.println("  Occurrences  : " + algo.instanceCount);
 			writer.println("  Comparisons  : " + algo.noOfComparisons);
