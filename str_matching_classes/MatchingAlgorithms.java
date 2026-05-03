@@ -5,7 +5,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -18,19 +17,15 @@ abstract class MatchingAlgorithms {
 	protected static int keyLength;
  	protected static String keyPattern;
  	protected static long textLength;
- 	static int cc;
+ 	static int cc; 
 	
 	public static void main(String[] args) throws IOException{
 		MatchingAlgorithms brute = new BruteForceAlgorithm(new PrintWriter("bruteOutput.html"));
 		MatchingAlgorithms boyer = new BoyerMooresAlgorithm(new PrintWriter("boyerOutput.html"));
 		MatchingAlgorithms horspool = new HorspoolAlgorithm(new PrintWriter("horspoolOutput.html"));
 		MatchingAlgorithms algosArray[] = {brute, boyer, horspool};
-		
-		Scanner filenameinput = new Scanner(System.in);
-		String filenamestring = filenameinput.nextLine();
-		filenameinput.close();
 		// text
-		String text = Files.readString(Path.of(filenamestring));		
+		String text = Files.readString(Path.of("input.html"));		
 		textLength = text.length();
         // key
 		keyPattern = Files.readString(Path.of("key.txt"));
@@ -43,16 +38,16 @@ abstract class MatchingAlgorithms {
             algo.timeElapsed = end - start;
             
             if(algo instanceof HorspoolAlgorithm) {
-            	printStatistics(algo, "Report.txt", filenamestring);
+            	printStatistics(algo, "Report.txt");
 				printBadSymbolTable(HorspoolAlgorithm.badSymbolTable, "Report.txt");
             }
             else if(algo instanceof BoyerMooresAlgorithm) {
-            	printStatistics(algo, "Report.txt", filenamestring);
+            	printStatistics(algo, "Report.txt");
             	printGoodSuffixTable(((BoyerMooresAlgorithm)algo).goodSuffixTable, "Report.txt");
             	printBadSymbolTable(HorspoolAlgorithm.badSymbolTable, "Report.txt");
             }
             else
-            	printStatistics(algo, "Report.txt", filenamestring);
+            	printStatistics(algo, "Report.txt");
             StringBuilder copy = new StringBuilder(text); 
             highlightHtml(algo, copy);
 		}
@@ -110,10 +105,10 @@ abstract class MatchingAlgorithms {
 	    }
 	}
 	
-	public static void printStatistics(MatchingAlgorithms algo, String outFileName, String inFileName) {
+	public static void printStatistics(MatchingAlgorithms algo, String outFileName) {
 		try (PrintWriter writer = new PrintWriter(new FileWriter(outFileName, true))) { // append? true
 			if(cc++ == 0)
-				writer.printf("Searched Key: %s in the file: %s\n", keyPattern, inFileName);
+				writer.printf("Searched Key: %s in the file: input.html\n", keyPattern);
 			writer.println("    " + algo.getClass().getSimpleName() + "    ");
 			writer.println("  Occurrences  : " + algo.instanceCount);
 			writer.println("  Comparisons  : " + algo.noOfComparisons);
