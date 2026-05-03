@@ -10,7 +10,7 @@ public class HorspoolAlgorithm extends MatchingAlgorithms {
 
     public static int[] badTable(String pattern) {
         badSymbolTable = new int[256];
-        int p=pattern.length();
+        int p= keyLength;
         for(int i = 0; i<256; i++) {
             badSymbolTable[i]=p;
         }
@@ -23,8 +23,8 @@ public class HorspoolAlgorithm extends MatchingAlgorithms {
     @Override
     protected void search(String text) {
         String pattern = keyPattern;
-        int m = pattern.length();
-        int n = text.length();
+        int m = keyLength;
+        long n = textLength;
         int[] table = badTable(pattern);
         int i = m - 1;
         char[] textChars = text.toCharArray();
